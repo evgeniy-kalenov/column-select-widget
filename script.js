@@ -27,6 +27,8 @@
             {data: "name"}
         ]
     });
+    var test = displayedTable.row().node();
+    $(test).addClass('ready');
 
     var setTable = $('.col-table.col-table__set').DataTable({
         paging:   false,
@@ -73,6 +75,37 @@
 
         activeTable.rows('.selected').remove().draw();
         inactiveTable.rows.add(rows).draw();
+    });
+
+    $('.column-select-widget .event-btn_up, .column-select-widget .event-btn_down').click(function () {
+        var rows = activeTable.$('.selected'),
+            isDownAction = $(this).hasClass('event-btn_down'),
+            tableRowsLength = activeTable.$('tr').length;
+
+        rows.each(function(index, element)
+        {
+            var rowIdx = element.rowIndex - 1,
+                rowIdxSiblings = isDownAction ? rowIdx + 1 : rowIdx - 1;
+
+            if(rowIdxSiblings < 0){
+                rowIdxSiblings = tableRowsLength - 1;
+            } else if(rowIdxSiblings > tableRowsLength - 1) {
+                rowIdxSiblings = 0;
+            }
+
+            var currentElement = activeTable.row('tr:eq(' + rowIdx + ')'),
+                currentElementData = currentElement.data();
+
+            var prevElement = activeTable.row('tr:eq(' + rowIdxSiblings + ')'),
+                prevElementData = prevElement.data();
+
+            currentElement.data(prevElementData);
+            $(currentElement.node()).removeClass('selected');
+
+            prevElement.data(currentElementData);
+            $(prevElement.node()).addClass('selected');
+
+        });
     });
 
     $('.column-select-widget .event-btn_save').click(function () {

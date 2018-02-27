@@ -13,6 +13,7 @@
     width: 10%;
     vertical-align: middle;
     padding-top: 100px;
+    position: relative; /* for .event-btn_save absolute position */
 }
 .column-select-widget > div > p {
     font-size: 24px;
@@ -36,7 +37,9 @@
     margin: 0 auto;
     position: relative;
 }
-.column-select-widget .event-btn_add:before {
+.column-select-widget .event-btn_add:before,
+.column-select-widget .event-btn_up:before,
+.column-select-widget .event-btn_down:before {
     content: '';
     display: block;
     position: absolute;
@@ -44,9 +47,19 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-image: url(images/sort_both_active.png);
     background-repeat: no-repeat;
     background-position: center;
+}
+.column-select-widget .event-btn_add:before {
+    background-image: url(images/sort_both_active.png);
+}
+.column-select-widget .event-btn_up:before {
+    top: 8px;
+    background-image: url(vendor/DataTables-1.10.16/images/sort_asc.png);
+}
+.column-select-widget .event-btn_down:before {
+    bottom: 8px;
+    background-image: url(vendor/DataTables-1.10.16/images/sort_desc.png);
 }
 .column-select-widget .event-btn_add {
     -webkit-transform: rotate(90deg);
@@ -55,12 +68,13 @@
     -o-transform: rotate(90deg);
     transform: rotate(90deg);
 }
-.column-select-widget .event-btn_del {
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    transform: rotate(-90deg);
+.column-select-widget .event-btn_save {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 6px;
+    right: 0;
+    margin: auto;
 }
 
 #col-selection-1 {
