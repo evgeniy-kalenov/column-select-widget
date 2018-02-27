@@ -1,0 +1,68 @@
+.column-select-widget {
+    display: table;
+    width: 100%;
+}
+.column-select-widget > div {
+    display: table-cell;
+}
+.column-select-widget > div:nth-child(1),
+.column-select-widget > div:nth-child(3){
+    width: 45%;
+}
+.column-select-widget > div:nth-child(2){
+    width: 10%;
+    vertical-align: middle;
+    padding-top: 100px;
+}
+.column-select-widget > div > p {
+    font-size: 24px;
+    margin: 5px 0;
+}
+.column-select-widget .dataTables_wrapper .dataTables_filter {
+    float: none;
+    text-align: left;
+}
+.column-select-widget .dataTables_wrapper .dataTables_filter > label {
+    display: block;
+}
+.column-select-widget .dataTables_wrapper .dataTables_filter > label > input {
+    width: 100%;
+    margin: 0;
+}
+.column-select-widget .event-btn {
+    height: 25px;
+    width: 25px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+.column-select-widget .event-btn_add:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(images/sort_both_active.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.column-select-widget .event-btn_add {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.column-select-widget .event-btn_del {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+#col-selection-1 {
+    width: 600px;
+}

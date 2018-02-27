@@ -1,0 +1,14 @@
+[
+    {"id": "1", "name": "Код позиции", "selected": false},
+    {"id": "2", "name": "Наименование позиции", "selected": true},
+    {"id": "3", "name": "ЕИ", "selected": false},
+    {"id": "4", "name": "Цена", "selected": true},
+    {"id": "5", "name": "Сумма", "selected": true},
+    {"id": "6", "name": "Склад", "selected": false},
+    {"id": "7", "name": "Партия", "selected": false},
+    {"id": "8", "name": "Остатки", "selected": false},
+    {"id": "9", "name": "Свободно", "selected": false},
+    {"id": "10", "name": "Завод", "selected": false},
+    {"id": "11", "name": "Сертификат", "selected": false},
+    {"id": "12", "name": "Комментарий", "selected": true}
+]
